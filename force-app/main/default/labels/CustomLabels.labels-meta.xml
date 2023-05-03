@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AdoptionFormTitle</fullName>
+        <categories>LWCLabels</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AdoptionFormTitle</shortDescription>
+        <value>Start an Adoption</value>
+    </labels>
+    <labels>
+        <fullName>NoAccountErrorMessage</fullName>
+        <categories>LWCLabels</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoAccountErrorMessage</shortDescription>
+        <value>Please link an Account record to this Case in order to create an Adoption Request.</value>
+    </labels>
+    <labels>
+        <fullName>NoResultsMessage</fullName>
+        <categories>LWCLabels</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoResultsMessage</shortDescription>
+        <value>No results to show</value>
+    </labels>
+</CustomLabels>
