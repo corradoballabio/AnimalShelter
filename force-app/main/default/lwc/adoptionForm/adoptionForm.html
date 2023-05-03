@@ -5,7 +5,7 @@
 		</template>
 
 		<header class="slds-modal__header">
-			<h2 class="slds-modal__title slds-hyphenate">Start an Adoption</h2>
+			<h2 class="slds-modal__title slds-hyphenate">{labels.formTitle}</label></h2>
 		</header>
 
 		<div class="slds-modal__content slds-var-p-around_medium scrollable-modal-content">
@@ -29,10 +29,20 @@
 					<div class="slds-clearfix">
 						<div class="slds-grid slds-wrap slds-gutters">
 							<div class="slds-col slds-size_1-of-2">
-								<lightning-input data-filter-id="Breed__c" type="text" label="Breed" value={suppliedBreed}></lightning-input>
+								<lightning-input
+									data-filter-id="Breed__c"
+									type="text"
+									label="Breed"
+									value={suppliedBreed}>
+								</lightning-input>
 							</div>
 							<div class="slds-col slds-size_1-of-2">
-								<lightning-input data-filter-id="Location__c" type="text" label="Location" value={suppliedProvince}></lightning-input>
+								<lightning-input
+									data-filter-id="Location__c"
+									type="text"
+									label="Location"
+									value={suppliedProvince}>
+								</lightning-input>
 							</div>
 						</div>
 						<lightning-button

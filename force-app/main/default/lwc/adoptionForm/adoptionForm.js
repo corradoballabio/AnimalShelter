@@ -7,6 +7,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 import noResults from "@salesforce/label/c.NoResultsMessage"
 import noAccount from "@salesforce/label/c.NoAccountErrorMessage"
+import formTitle from "@salesforce/label/c.AdoptionFormTitle"
 import searchPets from '@salesforce/apex/AdoptionFormController.searchPets'
 import insertRequest from '@salesforce/apex/AdoptionFormController.insertRequest'
 
@@ -43,7 +44,8 @@ export default class AdoptionForm extends NavigationMixin(LightningElement) {
 	}
 	labels = {
 		noResults: noResults,
-		noAccount: noAccount
+		noAccount: noAccount,
+		formTitle: formTitle
 	}
 
 	@wire(getRecord, { recordId: '$recordId', fields: CASE_FIELDS })
