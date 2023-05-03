@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Breed__c</fullName>
+    <description>The breed of the dog record</description>
+    <externalId>false</externalId>
+    <label>Breed</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>beagle</fullName>
+                <default>false</default>
+                <label>beagle</label>
+            </value>
+            <value>
+                <fullName>boxer</fullName>
+                <default>false</default>
+                <label>boxer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

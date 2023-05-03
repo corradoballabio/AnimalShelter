@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pet__c</fullName>
+    <description>Pet that the adoption refers to</description>
+    <externalId>false</externalId>
+    <label>Pet</label>
+    <referenceTo>Pet__c</referenceTo>
+    <relationshipLabel>Adoption Requests</relationshipLabel>
+    <relationshipName>AdoptionRequests</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>
