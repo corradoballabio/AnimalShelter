@@ -116,10 +116,10 @@ export default class AdoptionForm extends NavigationMixin(LightningElement) {
 		this.isLoading = true
 		insertRequest({
 			record: this.adoptionRequestRecord
-		}).then(() => {
+		}).then((result) => {
 			this.showToast()
 			this.closeModal(null)
-			this.navigateToRecord()
+			this.navigateToRecord(result)
 		}).catch(error => {
 			this.showToast(error)
 		}).finally(() => {
