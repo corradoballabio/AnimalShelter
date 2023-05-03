@@ -14,7 +14,7 @@ import CASE_ACCOUNT from "@salesforce/schema/Case.AccountId"
 import CASE_SUPPLIEDNAME from "@salesforce/schema/Case.SuppliedName"
 import CASE_EMAIL from "@salesforce/schema/Case.SuppliedEmail"
 import CASE_PHONE from "@salesforce/schema/Case.SuppliedPhone"
-import CASE_COUNTRY from "@salesforce/schema/Case.Country__c"
+import CASE_PROVINCE from "@salesforce/schema/Case.Province__c"
 import CASE_PREFERREDBREED from "@salesforce/schema/Case.PreferredBreed__c"
 import ADOPTIONREQUEST from "@salesforce/schema/AdoptionRequest__c"
 
@@ -23,7 +23,7 @@ const CASE_FIELDS = [
 	CASE_SUPPLIEDNAME,
 	CASE_EMAIL,
 	CASE_PHONE,
-	CASE_COUNTRY,
+	CASE_PROVINCE,
 	CASE_PREFERREDBREED
 ]
 
@@ -85,8 +85,8 @@ export default class AdoptionForm extends NavigationMixin(LightningElement) {
 		return this.case?.PreferredBreed__c.value
 	}
 
-	get suppliedCountry() {
-		return this.case?.Country__c.value
+	get suppliedProvince() {
+		return this.case?.Province__c.value
 	}
 
 	get noResults() {

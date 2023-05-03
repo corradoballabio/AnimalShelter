@@ -5,7 +5,7 @@ public with sharing class AdoptionFormController {
 		String query = 'SELECT Id,' +
 			'Name, ' +
 			'PictureUrl__c, ' +
-			'Country__c ' +
+			'Location__c ' +
 			'FROM Pet__c ';
 
 		if(!filters.isEmpty()) {query += 'WHERE ' + String.join(filters, ' AND ');}
