@@ -23,9 +23,14 @@
                 <label>Approved</label>
             </value>
             <value>
-                <fullName>Completed</fullName>
+                <fullName>CompletedAdopted</fullName>
                 <default>false</default>
-                <label>Completed</label>
+                <label>Completed - Adopted</label>
+            </value>
+            <value>
+                <fullName>CompletedNotAdopted</fullName>
+                <default>false</default>
+                <label>Completed - Not Adopted</label>
             </value>
         </valueSetDefinition>
     </valueSet>

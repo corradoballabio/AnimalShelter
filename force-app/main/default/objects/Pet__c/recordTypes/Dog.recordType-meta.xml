@@ -77,11 +77,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>In Adoption</fullName>
+            <fullName>InAdoptionProcess</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Registered</fullName>
+            <fullName>RegisteredAvailable</fullName>
             <default>false</default>
         </values>
     </picklistValues>

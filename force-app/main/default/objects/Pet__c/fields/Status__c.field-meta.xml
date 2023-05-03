@@ -17,14 +17,14 @@
                 <label>Created</label>
             </value>
             <value>
-                <fullName>Registered</fullName>
+                <fullName>RegisteredAvailable</fullName>
                 <default>false</default>
-                <label>Registered</label>
+                <label>Registered - Available</label>
             </value>
             <value>
-                <fullName>In Adoption</fullName>
+                <fullName>InAdoptionProcess</fullName>
                 <default>false</default>
-                <label>In Adoption</label>
+                <label>In Adoption Process</label>
             </value>
             <value>
                 <fullName>Adopted</fullName>
