@@ -1,0 +1,79 @@
+<template>
+	<div class="slds-is-relative">
+		<template if:true={isLoading}>
+			<lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+		</template>
+
+		<header class="slds-modal__header">
+			<h2 class="slds-modal__title slds-hyphenate">Start an Adoption</h2>
+		</header>
+
+		<div class="slds-modal__content slds-var-p-around_medium scrollable-modal-content">
+			<lightning-accordion allow-multiple-sections-open active-section-name={activeSections}>
+
+				<lightning-accordion-section name="adopterData" label={sections.adopterData}>
+					<div class="slds-grid slds-wrap slds-gutters">
+						<div class="slds-col slds-size_1-of-2">
+							<lightning-input type="text" label="Name" value={suppliedName}></lightning-input>
+						</div>
+						<div class="slds-col slds-size_1-of-2">
+							<lightning-input type="text" label="Email" value={suppliedEmail}></lightning-input>
+						</div>
+						<div class="slds-col slds-size_1-of-2">
+							<lightning-input type="text" label="Phone" value={suppliedPhone}></lightning-input>
+						</div>
+					</div>
+				</lightning-accordion-section>
+
+				<lightning-accordion-section name="searchFilters" label={sections.searchFilters}>
+					<div class="slds-clearfix">
+						<div class="slds-grid slds-wrap slds-gutters">
+							<div class="slds-col slds-size_1-of-2">
+								<lightning-input data-filter-id="Breed__c" type="text" label="Breed" value={suppliedBreed}></lightning-input>
+							</div>
+							<div class="slds-col slds-size_1-of-2">
+								<lightning-input data-filter-id="Country__c" type="text" label="Country" value={suppliedCountry}></lightning-input>
+							</div>
+						</div>
+						<lightning-button
+							class="slds-var-p-around_xx-small slds-float_right"
+							variant="brand"
+							label="Search"
+							onclick={searchPets}>
+						</lightning-button>
+					</div>
+				</lightning-accordion-section>
+
+				<lightning-accordion-section name="results" label={sections.results}>
+					<template if:true={noResults}>
+						<p class="slds-align_absolute-center">{labels.noResults}</p>
+					</template>
+
+					<div class="slds-grid slds-wrap slds-gutters">
+						<template for:each={queryResults} for:item="pet">
+							<div class="slds-col slds-size_1-of-2" key={pet.Id} data-id={pet.Id} onclick={petSelected}>
+								<c-pet-icon pet={pet} is-selected={pet.isSelected}></c-pet-icon>
+							</div>
+						</template>
+					</div>
+
+				</lightning-accordion-section>
+			</lightning-accordion>
+		</div>
+
+		<footer class="slds-modal__footer">
+			<lightning-button
+				class="slds-var-p-around_xx-small"
+				variant="neutral"
+				label="Cancel"
+				onclick={closeModal}>
+			</lightning-button>
+			<lightning-button
+				class="slds-var-p-around_xx-small"
+				variant="brand"
+				label="Submit"
+				onclick={handleSubmit}>
+			</lightning-button>
+		</footer>
+	</div>
+</template>
