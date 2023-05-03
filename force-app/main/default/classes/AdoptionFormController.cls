@@ -1,7 +1,7 @@
 public with sharing class AdoptionFormController {
 	@AuraEnabled
 	public static List<Pet__c> searchPets(List<String> filters){
-
+		Configuration__c pageSize = Configuration__c.getValues('AdoptionFormResultPageSize');
 		String query = 'SELECT Id,' +
 			'Name, ' +
 			'PictureUrl__c, ' +
@@ -9,8 +9,8 @@ public with sharing class AdoptionFormController {
 			'FROM Pet__c ';
 
 		if(!filters.isEmpty()) {query += 'WHERE ' + String.join(filters, ' AND ');}
+		query += ' LIMIT ' + Integer.valueOf(pageSize.Value__c);
 
-		query += ' LIMIT 15';
 		try {
 			return Database.query(query);
 		} catch (Exception e) {
