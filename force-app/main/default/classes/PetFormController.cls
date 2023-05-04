@@ -6,12 +6,15 @@ public with sharing class PetFormController {
 
 	@AuraEnabled(cacheable=true)
 	public static Object getDogBreeds() {
+		String endpoint = Configuration__c.getValues('DogAPIGetBreedsEndpoint').Value__c;
+		String method = Configuration__c.getValues('DogAPIGetBreedsMethod').Value__c;
+
 		try {
 			Http http = new Http();
 
 			HttpRequest req = new HttpRequest();
-			req.setEndpoint('https://dog.ceo/api/breeds/list/all');
-			req.setMethod('GET');
+			req.setEndpoint(endpoint);
+			req.setMethod(method);
 
 			HttpResponse res = http.send(req);
 
