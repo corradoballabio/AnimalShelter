@@ -11,4 +11,7 @@ public without sharing class Constants {
 	public static final String REQUEST_STATUS_APPROVED = 'Approved';
 	public static final String REQUEST_STATUS_ADOPTED = 'CompletedAdopted';
 	public static final String REQUEST_STATUS_NOT_ADOPTED = 'CompletedNotAdopted';
+
+	// Case constants
+	public static final String CASE_STATUS_CLOSED = 'Closed';
 }
