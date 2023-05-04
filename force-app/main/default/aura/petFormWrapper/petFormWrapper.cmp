@@ -1,0 +1,4 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride" access="global" >
+  <lightning:workspaceAPI aura:id="workspaceAPI"/>
+  <c:petForm recordid="{!v.recordId}" onclosetabrequest="{!c.closeTab}"/>
+</aura:component>
