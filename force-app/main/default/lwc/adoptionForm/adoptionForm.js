@@ -62,7 +62,7 @@ export default class AdoptionForm extends NavigationMixin(LightningElement) {
 
 			this.isLoading = false
 		} else if (error) {
-			this.showToast(error)
+			this.showToast(error?.body?.message)
 			this.closeModal()
 		}
 	}
@@ -106,7 +106,7 @@ export default class AdoptionForm extends NavigationMixin(LightningElement) {
 		}).then(result => {
 			this.queryResults = result
 		}).catch(error => {
-			this.showToast(error)
+			this.showToast(error?.body?.message)
 		}).finally(() => {
 			this.isLoading = false
 		})
