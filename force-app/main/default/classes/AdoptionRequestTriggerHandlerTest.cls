@@ -1,5 +1,13 @@
 @isTest
 public with sharing class AdoptionRequestTriggerHandlerTest {
+	@TestSetup
+	static void testSetup(){
+		insert new Configuration__c (
+			Name = 'DisableSetImageInTrigger',
+			Value__c = 'true'
+		);
+	}
+
 	@isTest
 	public static void testPetStatusUpdate() {
 		Account testAccount = new Account(

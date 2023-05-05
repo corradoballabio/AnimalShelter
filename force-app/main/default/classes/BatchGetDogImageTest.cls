@@ -5,6 +5,10 @@ public with sharing class BatchGetDogImageTest {
 	static void testSetup(){
 		Id dogRecordTypeId = Schema.SObjectType.Pet__c.getRecordTypeInfosByDeveloperName().get(Constants.PET_RT_NAME_DOG).getRecordTypeId();
 
+		Configuration__c doCallout = new Configuration__c (
+			Name = 'DisableSetImageInTrigger',
+			Value__c = 'true'
+		);
 		Configuration__c endpoint = new Configuration__c (
 			Name = 'DogAPIGetImageEndpoint',
 			Value__c = 'https://dog.ceo/api/breed/$$$/images/random'
@@ -13,7 +17,7 @@ public with sharing class BatchGetDogImageTest {
 			Name = 'DogAPIGetImageMethod',
 			Value__c = 'GET'
 		);
-		insert new List<Configuration__c>{endpoint, httpMethod};
+		insert new List<Configuration__c>{doCallout, endpoint, httpMethod};
 
 		Pet__c testPet1 = new Pet__c(
 			Name = 'test pet1 name',

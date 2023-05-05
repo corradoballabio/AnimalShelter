@@ -2,6 +2,10 @@
 public with sharing class PetTriggerHandlerTest {
 	@TestSetup
 	static void testSetup(){
+		Configuration__c doCallout = new Configuration__c (
+			Name = 'DisableSetImageInTrigger',
+			Value__c = 'false'
+		);
 		Configuration__c endpoint = new Configuration__c (
 			Name = 'DogAPIGetImageEndpoint',
 			Value__c = 'https://dog.ceo/api/breed/$$$/images/random'
@@ -10,7 +14,7 @@ public with sharing class PetTriggerHandlerTest {
 			Name = 'DogAPIGetImageMethod',
 			Value__c = 'GET'
 		);
-		insert new List<Configuration__c>{endpoint, httpMethod};
+		insert new List<Configuration__c>{doCallout, endpoint, httpMethod};
 	}
 
 	@isTest

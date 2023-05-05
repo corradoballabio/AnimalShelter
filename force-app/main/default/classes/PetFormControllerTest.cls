@@ -2,6 +2,10 @@
 public with sharing class PetFormControllerTest {
 	@TestSetup
 	static void testSetup(){
+		Configuration__c doCallout = new Configuration__c (
+			Name = 'DisableSetImageInTrigger',
+			Value__c = 'true'
+		);
 		Configuration__c endpoint = new Configuration__c (
 			Name = 'DogAPIGetBreedsEndpoint',
 			Value__c = 'testendpoint'
@@ -10,7 +14,7 @@ public with sharing class PetFormControllerTest {
 			Name = 'DogAPIGetBreedsMethod',
 			Value__c = 'GET'
 		);
-		insert new List<Configuration__c>{endpoint, httpMethod};
+		insert new List<Configuration__c>{doCallout, endpoint, httpMethod};
 	}
 
 	@isTest

@@ -2,10 +2,15 @@
 public with sharing class AdoptionFormControllerTest {
 	@TestSetup
 	static void testSetup(){
-		insert new Configuration__c (
+		Configuration__c doCallout = new Configuration__c (
+			Name = 'DisableSetImageInTrigger',
+			Value__c = 'true'
+		);
+		Configuration__c pageSize = new Configuration__c (
 			Name = 'AdoptionFormResultPageSize',
 			Value__c = '15'
 		);
+		insert new List<Configuration__c>{doCallout, pageSize};
 
 		Account account = new Account(
 			LastName = 'name test'
