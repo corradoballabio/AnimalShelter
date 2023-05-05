@@ -36,6 +36,14 @@
         <type>Flexipage</type>
         <pageOrSobjectType>Account</pageOrSobjectType>
     </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>Adyen_Animal_Shelter_Home</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+    </actionOverrides>
     <brand>
         <headerColor>#0070D2</headerColor>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
@@ -48,9 +56,11 @@
     <label>Adyen Animal Shelter</label>
     <navType>Console</navType>
     <setupExperience>service</setupExperience>
+    <tabs>standard-home</tabs>
+    <tabs>Pet__c</tabs>
     <tabs>standard-Account</tabs>
     <tabs>standard-Case</tabs>
-    <tabs>Pet__c</tabs>
+    <tabs>standard-ProcessInstanceWorkitem</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Adyen_Animal_Shelter_UtilityBar</utilityBar>
     <workspaceConfig>
@@ -62,6 +72,12 @@
         </mappings>
         <mappings>
             <tab>standard-Case</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-ProcessInstanceWorkitem</tab>
+        </mappings>
+        <mappings>
+            <tab>standard-home</tab>
         </mappings>
     </workspaceConfig>
 </CustomApplication>
